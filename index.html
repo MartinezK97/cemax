@@ -78,9 +78,9 @@
             // Configuración de movimiento (ajusta estos valores)
             const motionConfig = {
                 maxTilt: 20,          // Máxima inclinación en grados
-                sensitivity: 0.5,     // Intensidad del movimiento (0.1 - 1)
+                sensitivity: 1,     // Intensidad del movimiento (0.1 - 1)
                 scale: 1.1,           // Escala del efecto de profundidad
-                smoothness: 0.15,     // Suavizado del movimiento (0 = brusco, 1 = suave)
+                smoothness: 0.5,     // Suavizado del movimiento (0 = brusco, 1 = suave)
                 enableScale: true     // Habilitar efecto de escala
             };
 
@@ -128,8 +128,7 @@
                     const transform = `
                 rotateX(${currentRotation.x}deg)
                 rotateY(${currentRotation.y}deg)
-                ${motionConfig.enableScale ? `scale(${motionConfig.scale})` : ''}
-            `;
+                ${motionConfig.enableScale ? `scale(${motionConfig.scale})` : ''}`;
 
                     portada.style.transform = transform;
                 };

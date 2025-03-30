@@ -1,12 +1,13 @@
 header {
     height: 5rem;
-    background: #0001;
+    /* background: #0001;
+    backdrop-filter: blur(20px); */
     z-index: 99;
     position: fixed;
     inset: 0 0 auto 0;
-    backdrop-filter: blur(20px);
     width: 100vw;
     max-width: 100vw;
+    border-bottom: solid 1px red;
 }
 
 header * {

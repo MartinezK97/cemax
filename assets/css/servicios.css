@@ -1,6 +1,7 @@
 #servicios {
     width: clamp(300px, 100%, 1000px);
     margin: 0 auto;
+    border-top: solid 1px green;
 }
 
 .service {

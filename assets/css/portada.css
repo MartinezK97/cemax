@@ -27,7 +27,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background-image: url('../img/portada_h.webp');
+    background-image: url('../img/portada_v.webp');
     /* background-image: url(https://img.freepik.com/foto-gratis/apartamento-moderno-lujo-comoda-decoracion-almohadas-generada-ia_188544-40143.jpg?t=st=1743350187~exp=1743353787~hmac=76cc5502e64665101ff1b591cac5f6059728bfac4fd3f8012f9f244c2738c7fe&w=1380); */
     background-size: cover;
     background-position: center;
@@ -38,13 +38,13 @@
 
 }
 
-#background3d:after {
+/* #background3d:after {
     content: "";
     position: absolute;
     inset: 0;
     background: #0009;
     z-index: 1;
-}
+} */
 
 #portada>* {
     color: #fff;

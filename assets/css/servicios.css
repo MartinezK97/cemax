@@ -1,50 +1,107 @@
 #servicios {
-    width: clamp(300px, 100%, 1000px);
+    /* border: solid 1px red; */
+    min-height: 100vh;
+    max-height: max-content;
+    padding: 1rem;
+    width: 100%;
     margin: 0 auto;
-    border-top: solid 1px green;
 }
 
-.service {
-    height: clamp(500px, 40vh, 600px);
-    position: relative;
-}
-
-.service:after {
-    content: "";
-    position: absolute;
-    background-color: #f0f3;
-    width: 40%;
+#servicios .content-services {
+    /* display: block; */
+    /* border: solid 1px blue; */
+    width: 100%;
     height: 100%;
-    left: 0;
-    z-index: 0;
-    top: 0;
-    background-image: url(../img/construccion.jpg);
-    background-size: cover;
-    border: solid 1px red;
+    min-height: 100vh;
+    grid-gap: 4rem 1rem;
 }
 
-.service:before {
-    content: "";
+
+
+#servicios .service .img {
+    /* background: #f0f5; */
+    width: 75%;
+    height: calc(100% + 2rem);
+    margin-top: -1rem;
     position: absolute;
-    /* inset: 0; */
-    width: 50%;
-    height: 100%;
-    left: 0;
-    z-index: 1;
-    background-image: url(../img/service2.svg);
-    background-size: cover;
-    border: solid 1px green;
+    box-shadow: 0 0 5px #0003;
+    background-color: #fff;
 }
 
-.service .description {
+#servicios h1,
+#servicios h2,
+#servicios h3 {
+    color: var(--titles);
+}
+
+.construccion .img,
+.sanitaria .img {
+    transform: skewY(-5deg);
+}
+
+.terminaciones .img,
+.electricidad .img {
+    right: 0;
+    transform: skewY(5deg);
+
+}
+
+.construccion .description,
+.sanitaria .description {
+    grid-column: 2/3;
+
+}
+
+.construccion .img {
+    background-image: url(../img/construccion.svg);
+    background-size: cover;
+    border: saolid 1px;
+}
+
+.terminaciones .img {
+    background-image: url(../img/terminaciones.svg);
+    background-size: cover;
+    background-position: 0 100%;
+}
+
+.sanitaria .img {
+    background-image: url(../img/sanitaria.svg);
+    background-size: cover;
+    color: #BA68C8;
+}
+
+.electricidad .img {
+    background-image: url(../img/electricidad.svg);
+    background-size: cover;
+}
+
+
+
+
+.description {
+    border-radius: 10px;
+    padding: 1rem;
+    backdrop-filter: blur(10px);
     z-index: 1;
-    position: relative;
-    border: solid 1px blue;
-    position: absolute;
-    inset: 2rem 2rem 2rem auto;
-    width: 50%;
-    background-color: #fff1;
-    backdrop-filter: blur(5px);
-    border-radius: 15px;
-    padding: 2rem 1rem;
+    border: solid 1px #fff5;
+    background-color: #fff5;
+}
+
+.description h3 {
+    text-align: center;
+    font-size: 1.25rem;
+}
+
+
+@media(width < 999px) {
+
+
+    #servicios .content-services {
+        grid-template-columns: 1fr;
+        max-width: 90%;
+        grid-gap: 6rem !important;
+        margin: 0 auto;
+    }
+
+
 }

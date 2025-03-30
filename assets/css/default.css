@@ -7,12 +7,13 @@
     --link: rgb(0, 181, 253);
 
     --font-color: #301d01;
+    --titles: #4e3002;
     --font-family-logo: "Boldonse";
     --primary: #fbc26b;
     --primary-03: rgb(0, 255, 98, 0.3);
     --border-light: rgba(255, 255, 255, 0.1);
 
-    --border-light: solid 1px #fbc26b20;
+    --border-light: solid 1px #301d0120;
 }
 
 
@@ -211,6 +212,12 @@ html {
 .box {
     border-radius: 5px;
     padding: 15px 10px;
+}
+
+.btn-primary {
+    color: var(--primary);
+    border: solid 1px #fff;
+    color: var(--btn-color);
 }
 
 .btn-secondary {
@@ -497,7 +504,7 @@ i {
 }
 
 .border-light {
-    border: solid 1px var(--border-light)
+    border: var(--border-light)
 }
 
 .border-gray {

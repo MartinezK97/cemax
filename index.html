@@ -42,7 +42,7 @@
         <a href="#"><i class="fa fa-briefcase"></i> Contacto </a>
     </div>
     <section id="portada" class="dg ac-center ai-center">
-        <div class="background"></div>
+        <div id="background3d"></div>
         <h1 class="fz-5 ta-center maxw-max mar-0-a">Transformamos<br />tus espacios</h1>
         <h2 class="fz-3 ta-center maxw-max mar-0-a">Hace más de 10 años</h2>
         <a href="http://wa.me/+59898760446" target="_blank" href="#"
@@ -74,94 +74,93 @@
 
 
     <script>
+        const motionConfig = {
+            maxTilt: 20,          // Máxima inclinación en grados
+            sensitivity: 1,     // Intensidad del movimiento (0.1 - 1)
+            scale: 1.1,           // Escala del efecto de profundidad
+            smoothness: 0.5,     // Suavizado del movimiento (0 = brusco, 1 = suave)
+            enableScale: true     // Habilitar efecto de escala
+        };
         document.addEventListener('DOMContentLoaded', () => {
-            // Configuración de movimiento (ajusta estos valores)
             const motionConfig = {
-                maxTilt: 20,          // Máxima inclinación en grados
-                sensitivity: 1,     // Intensidad del movimiento (0.1 - 1)
-                scale: 1.1,           // Escala del efecto de profundidad
-                smoothness: 0.5,     // Suavizado del movimiento (0 = brusco, 1 = suave)
-                enableScale: true     // Habilitar efecto de escala
+                maxTilt: 30,           // Máxima inclinación permitida
+                sensitivity: {         // Sensibilidad por eje
+                    x: 1,            // Horizontal (gamma)
+                    y: 1             // Vertical (beta)
+                },
+                scale: 1.15,           // Efecto de profundidad
+                invertMovement: true,  // Invertir dirección del movimiento
+                smoothness: 0.1        // Suavidad del efecto
             };
 
-            // Verificación de contexto seguro
-            if (window.isSecureContext) {
-                console.log("Contexto seguro (HTTPS/localhost)");
-            } else {
-                console.log("Se requiere HTTPS para el giroscopio");
-            }
-
+            // Elementos del DOM
             const gyroStatus = document.getElementById('gyroStatus');
             const portada = document.getElementById('portada');
 
-            if (!portada || !gyroStatus) {
-                console.error('Elementos del DOM no encontrados');
-                return;
-            }
+            if (!portada || !gyroStatus) return;
 
-            if (window.DeviceOrientationEvent) {
-                // Configuración inicial para iOS
-                if (typeof DeviceOrientationEvent.requestPermission === 'function') {
-                    gyroStatus.textContent = 'Toca la pantalla para activar el giroscopio';
-                    gyroStatus.style.color = '#ffff00';
-                } else {
-                    gyroStatus.textContent = 'Giroscopio soportado ✅';
-                    gyroStatus.style.color = '#00ff00';
+            // Variables de estado
+            let currentX = 0, currentY = 0;
+
+            const handleOrientation = e => {
+                // Obtener valores del sensor
+                let gamma = e.gamma || 0;  // Horizontal (-90 a 90)
+                let beta = e.beta || 0;     // Vertical (-180 a 180)
+
+                // Aplicar inversión de movimiento
+                if (motionConfig.invertMovement) {
+                    gamma = -gamma;
+                    beta = -beta;
                 }
 
-                // Manejador de movimiento
-                let currentRotation = { x: 0, y: 0 };
+                // Calcular movimiento objetivo
+                const targetX = Math.min(motionConfig.maxTilt,
+                    Math.max(-motionConfig.maxTilt,
+                        beta * motionConfig.sensitivity.y));
 
-                const handleOrientation = e => {
-                    let gamma = e.gamma || 0;
-                    let beta = e.beta || 0;
+                const targetY = Math.min(motionConfig.maxTilt,
+                    Math.max(-motionConfig.maxTilt,
+                        gamma * motionConfig.sensitivity.x));
 
-                    // Aplicar límites
-                    gamma = Math.max(-motionConfig.maxTilt, Math.min(motionConfig.maxTilt, gamma));
-                    beta = Math.max(-motionConfig.maxTilt, Math.min(motionConfig.maxTilt, beta));
+                // Suavizar movimiento
+                currentX += (targetX - currentX) * motionConfig.smoothness;
+                currentY += (targetY - currentY) * motionConfig.smoothness;
 
-                    // Aplicar suavizado
-                    currentRotation.x += (beta * motionConfig.sensitivity - currentRotation.x) * motionConfig.smoothness;
-                    currentRotation.y += (gamma * motionConfig.sensitivity - currentRotation.y) * motionConfig.smoothness;
+                // Aplicar transformación
+                portada.style.transform = `
+            rotateX(${currentX}deg)
+            rotateY(${currentY}deg)
+            scale(${motionConfig.scale})
+        `;
+            };
 
-                    // Construir transformación
-                    const transform = `
-                rotateX(${currentRotation.x}deg)
-                rotateY(${currentRotation.y}deg)
-                ${motionConfig.enableScale ? `scale(${motionConfig.scale})` : ''}`;
-
-                    portada.style.transform = transform;
-                };
-
-                // Manejador de permisos
-                const requestPermission = () => {
-                    DeviceOrientationEvent.requestPermission()
-                        .then(permissionState => {
-                            if (permissionState === 'granted') {
-                                window.addEventListener('deviceorientation', handleOrientation);
-                                gyroStatus.textContent = 'Giroscopio activado ✅';
-                                gyroStatus.style.color = '#00ff00';
-                            } else {
-                                gyroStatus.textContent = 'Permiso denegado ❌';
-                                gyroStatus.style.color = '#ff0000';
-                            }
-                        })
-                        .catch(error => {
-                            gyroStatus.textContent = 'Error al acceder al giroscopio';
-                            console.error(error);
-                        });
-                };
-
-                // Inicialización
-                if (typeof DeviceOrientationEvent.requestPermission === 'function') {
-                    document.body.addEventListener('click', requestPermission, { once: true });
-                } else {
-                    window.addEventListener('deviceorientation', handleOrientation);
+            // Manejador de permisos (versión mejorada)
+            const initGyro = async () => {
+                try {
+                    if (typeof DeviceOrientationEvent.requestPermission === 'function') {
+                        const permission = await DeviceOrientationEvent.requestPermission();
+                        if (permission === 'granted') {
+                            window.addEventListener('deviceorientation', handleOrientation);
+                            gyroStatus.textContent = 'Giroscopio activado ✅';
+                            gyroStatus.style.color = '#00ff00';
+                        }
+                    } else {
+                        window.addEventListener('deviceorientation', handleOrientation);
+                        gyroStatus.textContent = 'Giroscopio activado ✅';
+                        gyroStatus.style.color = '#00ff00';
+                    }
+                } catch (error) {
+                    gyroStatus.textContent = 'Error ❌';
+                    console.error(error);
                 }
-            } else {
-                gyroStatus.textContent = 'Dispositivo no soporta giroscopio ❌';
-                gyroStatus.style.color = '#ff0000';
-            }
+            };
+
+            // Iniciar con interacción del usuario
+            document.addEventListener('click', initGyro, { once: true });
+
+            // Estado inicial
+            gyroStatus.textContent = 'Toca para activar el giroscopio 📱';
+            gyroStatus.style.color = '#ffff00';
         });
     </script>
 

@@ -23,7 +23,7 @@
     perspective: 1000px;
 }
 
-#portada .background {
+#background3d {
     content: '';
     position: absolute;
     inset: 0;
@@ -36,7 +36,7 @@
 
 }
 
-#portada .background:after {
+#background3d:after {
     content: "";
     position: absolute;
     inset: 0;

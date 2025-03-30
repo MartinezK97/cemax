@@ -9,9 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
             freezeThreshold: 0.03
         },
         mobile: {
-            maxTilt: 25,
-            sensitivity: 0.8,
-            scale: 1.2,
+            maxTilt: 20,
+            sensitivity: 0.75,
+            scale: 1.25,
             invert: true,
             smoothFactor: 0.15
         }

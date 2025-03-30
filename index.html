@@ -33,17 +33,17 @@
 
 <body>
     <header class="dg gtc-min-a pad-1-2">
-        <a href="#" class="dg gtc-min-a fz-2">
-            <i class="isotype"></i>
-            <span>Cemax</span>
+        <a href="#" class="dg gtc-min-a fz-2 ac-center ai-center">
+            <i class="fa fa-cubes as-center"></i>
+            <span class="fw-8">Cemax</span>
         </a>
         <!-- Menú de cabecera -->
         <nav class="dg gtc-5 gg-1-5 maxw-min mar-a-0-a-a ac-center ai-center">
-            <a href="" class="dg gtc-1-a gg-5"><i class="fa fa-home as-center"></i><span>Inicio</span></a>
-            <a href="" class="dg gtc-1-a gg-5"><i class="fa fa-users as-center"></i><span>Nosotros</span></a>
-            <a href="" class="dg gtc-1-a gg-5"><i class="fa fa-trowel as-center"></i><span>Servicios</span></a>
-            <a href="" class="dg gtc-1-a gg-5"><i class="fa fa-comments as-center"></i><span>Testimonios</span></a>
-            <a href="" class="dg gtc-1-a gg-5 bg-primary color-btn pad-05-2 br-100"><i
+            <a href="" class="dg gtc-min-a gg-5"><i class="fa fa-home as-center"></i><span> Inicio</span></a>
+            <a href="" class="dg gtc-min-a gg-5"><i class="fa fa-users as-center"></i><span> Nosotros</span></a>
+            <a href="" class="dg gtc-min-a gg-5"><i class="fa fa-trowel as-center"></i><span> Servicios</span></a>
+            <a href="" class="dg gtc-min-a gg-5"><i class="fa fa-comments as-center"></i><span> Testimonios</span></a>
+            <a href="" class="dg gtc-min-a gg-5 bg-button color-btn pad-05-2 br-100"><i
                     class="fa fa-envelope as-center"></i><span>Contacto</span></a>
         </nav>
     </header>
@@ -64,21 +64,25 @@
             <i class="fab fa-whatsapp"></i> Solicitar presupuesto</a>
     </section>
     <!-- Servicios -->
-    <section id="servicios" class="fz-1">
+    <section id="servicios" class="fz-1" style="display:none;">
         <h1 class="fz-2 pad-1 ta-center color-primary">Nuestros Servicios</h1>
         <div class="pad-2">
 
             <p class="lineH-1-5">Ofrecemos soluciones integrales en albañilería y construcción, sanitaria y
                 electricidad, respaldadas por:
             </p>
-            <div class="db"><i class="fa fa-check"></i> Garantía de calidad certificada en todos nuestros
-                trabajos</div>
-            <div clas="db mar-tp-05"><i class="fa fa-check"></i> Profesionalismo especializado con mano de obra
-                calificada
+            <div class="db">
+                <i class="fa fa-check"></i> Garantía de calidad certificada en todos nuestros
+                trabajos
             </div>
-            <div clas="db mar-tp-05"><i class="fa fa-check"></i> Estricto cumplimiento de normas de seguridad y
+            <div clas="db mar-tp-05 border-tp-light"><i class="fa fa-check"></i> Profesionalismo especializado con mano
+                de obra calificada
+            </div>
+            <div clas="db mar-tp-05">
+                <i class="fa fa-check"></i> Estricto cumplimiento de normas de seguridad y
                 construcción
-                vigentes</div>
+                vigentes
+            </div>
 
         </div>
         <div id="servicios" class=" mar-0 pad-0">
@@ -99,12 +103,12 @@
 
     <div class="modal-backdrop"></div>
     <div class="permission-modal">
-        <h2>¿Permitir acceso al giroscopio? 🌍</h2>
+        <h2 class="pad-1">¿Permitir acceso al giroscopio?</h2>
         <p>Para disfrutar de la experiencia interactiva, necesitamos acceso al sensor de movimiento de tu dispositivo.
         </p>
         <button id="grant-permission">Permitir acceso</button>
     </div>
-    <script src="./assets/js/gyroscope.js"></script>
+    <script src="./assets/js/gyroscope_.js"></script>
 
 
 </body>

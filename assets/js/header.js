@@ -8,6 +8,6 @@ document.addEventListener("scroll", () => {
     let progress = Math.min(1, Math.max(0, (triggerPoint - serviciosTop) / triggerPoint));
 
     header.style.transition = "background-color 0.3s ease, backdrop-filter 0.3s ease";
-    header.style.backgroundColor = `rgba(0, 0, 0, ${progress * 0.3})`;
-    header.style.backdropFilter = `blur(${progress * 10}px)`;
+    header.style.backgroundColor = `rgba(251, 194, 107, ${progress * 0.99})`;
+    // header.style.backdropFilter = `blur(${progress * 10}px)`;
 });

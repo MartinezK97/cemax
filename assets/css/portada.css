@@ -35,16 +35,15 @@
     will-change: transform;
     transform-style: preserve-3d;
     backface-visibility: hidden;
-
 }
 
-/* #background3d:after {
+#background3d:after {
     content: "";
     position: absolute;
     inset: 0;
     background: #0009;
     z-index: 1;
-} */
+}
 
 #portada>* {
     color: #fff;
@@ -56,19 +55,21 @@
 #portada>h1,
 #portada>h2 {
     font-family: "Rubik Distressed";
-    text-shadow: 0 0 5px #000;
+    color: #fff;
     font-weight: 100;
-    text-shadow: 0 0 10px #fbc26b;
+    text-shadow: 0 0 5px #000, 0 0 25px #fbc26b;
 }
 
 #portada a {
     margin-top: 5rem;
     inset: auto 0 4rem 0;
     padding: 1rem 3rem;
-    color: var(--link);
-    border: solid 2px var(--link);
+    color: #fbc26b;
+    border: solid 2px #fbc26b;
     font-weight: 600;
     font-size: 1.5rem;
+    box-shadow: 0 0 15px #fbc26b;
+    background-color: #0007;
 }
 
 

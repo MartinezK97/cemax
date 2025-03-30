@@ -47,6 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Lógica Desktop
     if (isDesktop) {
+        portada.style.backgroundImage = '../img/portada_h.webp';
         const handleMouseMove = (e) => {
             const xPos = (e.clientX / window.innerWidth - 0.5) * 2;
             const yPos = (e.clientY / window.innerHeight - 0.5) * 2;

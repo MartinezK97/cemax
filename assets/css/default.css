@@ -2,14 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Boldonse&family=Rubik+Distressed&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap');
 
 :root {
-    --font-family-logo: "Boldonse";
-
-    --primary: rgb(13, 79, 83);
-    --link: rgb(29, 152, 201);
-    --primary-03: rgb(0, 255, 98, 0.3);
-    --font-color: #01181b;
-    --border-light: rgba(255, 255, 255, 0.1);
     --body-color: rgb(215, 255, 255);
+    --link: rgb(0, 181, 253);
+
+    --font-color: #01181b;
+    --font-family-logo: "Boldonse";
+    --primary: rgb(13, 79, 83);
+    --primary-03: rgb(0, 255, 98, 0.3);
+    --border-light: rgba(255, 255, 255, 0.1);
 }
 
 

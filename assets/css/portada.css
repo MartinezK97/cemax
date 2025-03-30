@@ -27,8 +27,8 @@
     content: '';
     position: absolute;
     inset: 0;
-    background-image: url('../img/portada.jpg');
-    background-image: url(https://img.freepik.com/foto-gratis/pared-piedra_1417-1590.jpg?t=st=1743346446~exp=1743350046~hmac=c3dca0772f1fa519ec83ec231333f13c489de418cfd864e0b0df1f84e19e59aa&w=996);
+    background-image: url('../img/portada_h.webp');
+    /* background-image: url(https://img.freepik.com/foto-gratis/apartamento-moderno-lujo-comoda-decoracion-almohadas-generada-ia_188544-40143.jpg?t=st=1743350187~exp=1743353787~hmac=76cc5502e64665101ff1b591cac5f6059728bfac4fd3f8012f9f244c2738c7fe&w=1380); */
     background-size: cover;
     background-position: center;
     transition: transform 0.1s linear;
@@ -58,6 +58,7 @@
     font-family: "Rubik Distressed";
     text-shadow: 0 0 5px #000;
     font-weight: 100;
+    text-shadow: 0 0 10px #fbc26b;
 }
 
 #portada a {
@@ -82,32 +83,49 @@
 
 
 /*! SI ES MENOR A 999px  */
-@media(width < 999px) {
+@media(width < 800px) {
     #portada h1 {
-        font-size: 4rem;
+        font-size: 3.5rem;
     }
 
     #portada h2 {
-        font-size: 3rem;
+        font-size: 2.75rem;
     }
 
     #portada a {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
     }
 }
 
 
 /*!-- SI ES MENOR A 500px */
-@media(width < 500px) {
+@media(width < 550px) {
     #portada h1 {
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
 
     #portada h2 {
-        font-size: 2rem;
+        font-size: 1.75rem;
+        margin-top: 2rem;
     }
 
     #portada a {
-        font-size: 1.25rem;
+        font-size: 1.15rem;
+    }
+}
+
+/*!-- SI ES MENOR A 500px */
+@media(width < 400px) {
+    #portada h1 {
+        font-size: 2rem;
+    }
+
+    #portada h2 {
+        font-size: 1.5rem;
+        margin-top: 1.5rem;
+    }
+
+    #portada a {
+        font-size: 1rem;
     }
 }

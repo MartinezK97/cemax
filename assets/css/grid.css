@@ -64,6 +64,10 @@
     grid-gap: 1rem;
 }
 
+.gg-1-5 {
+    grid-gap: 1.5rem;
+}
+
 .gg-1-2 {
     grid-gap: 1rem 2rem;
 }

@@ -1,0 +1,110 @@
+#portada {
+    width: 100vw;
+    max-width: 100vw;
+    height: 100vh;
+    /* margin-top: -4rem; */
+
+    position: relative;
+    padding: 2rem;
+    background-attachment: fixed;
+    position: relative;
+    transition: transform 0.1s linear;
+    will-change: transform;
+    transform-style: preserve-3d;
+}
+
+/* #portada::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url(../img/portada.jpg);
+    background-size: cover;
+    background-position: 25% 100%;
+    background-size: cover;
+    background-position: center;
+    transform-origin: center;
+    transition: transform 0.1s ease-out;
+}
+
+#portada::before {
+    transform: skewX(var(--skewX, 0deg)) skewY(var(--skewY, 0deg)) translate(var(--translateX, 0px), var(--translateY, 0px));
+} */
+
+#portada {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+#portada::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('../img/portada.jpg');
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.1s linear;
+    will-change: transform;
+    transform-style: preserve-3d;
+}
+
+#portada>* {
+    color: #fff;
+    z-index: 1;
+}
+
+
+#portada a {
+    margin-top: 5rem;
+    inset: auto 0 4rem 0;
+    padding: 1rem 3rem;
+    color: var(--link);
+    border: solid 2px var(--link);
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+
+#portada:after {
+    content: "";
+    position: absolute;
+    display: block;
+    inset: 0;
+    background-color: #0009;
+    z-index: 0;
+}
+
+
+/*! SI ES MENOR A 999px  */
+@media(width < 999px) {
+    #portada h1 {
+        font-size: 4rem;
+    }
+
+    #portada h2 {
+        font-size: 3rem;
+    }
+
+    #portada a {
+        font-size: 1.5rem;
+    }
+}
+
+
+/*!-- SI ES MENOR A 500px */
+@media(width < 500px) {
+    #portada h1 {
+        font-size: 3rem;
+    }
+
+    #portada h2 {
+        font-size: 2rem;
+    }
+
+    #portada a {
+        font-size: 1.25rem;
+    }
+}

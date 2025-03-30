@@ -1,0 +1,49 @@
+#servicios {
+    width: clamp(300px, 100%, 1000px);
+    margin: 0 auto;
+}
+
+.service {
+    height: clamp(500px, 40vh, 600px);
+    position: relative;
+}
+
+.service:after {
+    content: "";
+    position: absolute;
+    background-color: #f0f3;
+    width: 40%;
+    height: 100%;
+    left: 0;
+    z-index: 0;
+    top: 0;
+    background-image: url(../img/construccion.jpg);
+    background-size: cover;
+    border: solid 1px red;
+}
+
+.service:before {
+    content: "";
+    position: absolute;
+    /* inset: 0; */
+    width: 50%;
+    height: 100%;
+    left: 0;
+    z-index: 1;
+    background-image: url(../img/service2.svg);
+    background-size: cover;
+    border: solid 1px green;
+}
+
+.service .description {
+    z-index: 1;
+    position: relative;
+    border: solid 1px blue;
+    position: absolute;
+    inset: 2rem 2rem 2rem auto;
+    width: 50%;
+    background-color: #fff1;
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    padding: 2rem 1rem;
+}

@@ -1,0 +1,442 @@
+.ac-baseline {
+    align-content: baseline;
+}
+
+.as-center {
+    align-self: center;
+}
+
+.ac-center {
+    align-content: center;
+}
+
+.ac-sb {
+    align-content: space-between;
+}
+
+.ai-center {
+    align-items: center;
+}
+
+.ta-center {
+    text-align: center;
+}
+
+.dg {
+    display: grid;
+}
+
+.db {
+    display: block;
+}
+
+.dib {
+    display: inline-block;
+}
+
+.df {
+    display: flex;
+}
+
+/* Clases para las grillas */
+.gg-0 {
+    grid-gap: 0;
+}
+
+.gg-0-1 {
+    grid-gap: 0 1rem;
+}
+
+
+.gg-1-0 {
+    grid-gap: 1rem 0;
+}
+
+.gg-025 {
+    grid-gap: 0.25rem;
+}
+
+.gg-05 {
+    grid-gap: 0.5rem;
+}
+
+.gg-1 {
+    grid-gap: 1rem;
+}
+
+.gg-1-2 {
+    grid-gap: 1rem 2rem;
+}
+
+.gg-2 {
+    grid-gap: 2rem;
+}
+
+.gg-5 {
+    grid-gap: 5px;
+}
+
+.gg-10 {
+    grid-gap: 10px;
+}
+
+.gg-10-0 {
+    grid-gap: 10px 0;
+}
+
+.gg-0-5 {
+    grid-gap: 0 5px;
+}
+
+.gg-0-10 {
+    grid-gap: 0 10px;
+}
+
+.gg-0-15 {
+    grid-gap: 0 15px;
+}
+
+.gg-0-20 {
+    grid-gap: 0 20px;
+}
+
+
+
+
+
+/* Grid column 1/x */
+.gc-1-2 {
+    grid-column: 1/2;
+}
+
+.gc-1-3 {
+    grid-column: 1/3;
+}
+
+.gc-1-4 {
+    grid-column: 1/4;
+}
+
+.gc-1-5 {
+    grid-column: 1/5;
+}
+
+.gc-1-6 {
+    grid-column: 1/6;
+}
+
+.gc-1-7 {
+    grid-column: 1/7;
+}
+
+.gc-1-7 {
+    grid-column: 1/13;
+}
+
+/* Grid column 2/x */
+.gc-2-2 {
+    grid-column: 2/2;
+}
+
+.gc-2-3 {
+    grid-column: 2/3;
+}
+
+.gc-2-4 {
+    grid-column: 2/4;
+}
+
+.gc-2-5 {
+    grid-column: 2/5;
+}
+
+.gc-2-6 {
+    grid-column: 2/6;
+}
+
+/* Grid column 3/x */
+.gc-3-3 {
+    grid-column: 3/3;
+}
+
+.gc-3-4 {
+    grid-column: 3/4;
+}
+
+.gc-3-5 {
+    grid-column: 3/5;
+}
+
+.gc-3-6 {
+    grid-column: 3/6;
+}
+
+/* Grid column 2/x */
+.gc-4-4 {
+    grid-column: 4/4;
+}
+
+.gc-4-5 {
+    grid-column: 4/5;
+}
+
+.gc-4-6 {
+    grid-column: 4/6;
+}
+
+.gc-4-7 {
+    grid-column: 4/7;
+}
+
+.gc-4-8 {
+    grid-column: 4/8;
+}
+
+.gc-5-6 {
+    grid-column: 5/6;
+}
+
+.gc-5-7 {
+    grid-column: 5/7;
+}
+
+.gc-6-7 {
+    grid-column: 6/7;
+}
+
+.gc-7-13 {
+    grid-column: 7/13;
+}
+
+.gr-1-2 {
+    grid-row: 1/2;
+}
+
+.gr-1-3 {
+    grid-row: 1/3;
+}
+
+.gr-1-4 {
+    grid-row: 1/4;
+}
+
+.gr-1-5 {
+    grid-row: 1/5;
+}
+
+.gr-1-6 {
+    grid-row: 1/6;
+}
+
+.gr-1-7 {
+    grid-row: 1/7;
+}
+
+.gr-1-8 {
+    grid-row: 1/8;
+}
+
+.gr-1-9 {
+    grid-row: 1/9;
+}
+
+
+.odd {
+    background: #0001;
+}
+
+/* Template columns */
+.gtc-a-1 {
+    grid-template-columns: auto 1rem;
+}
+
+.gtc-a-min {
+    grid-template-columns: auto min-content;
+}
+
+/* Template columns */
+.gtc-a-a {
+    grid-template-columns: auto auto;
+}
+
+.gtc-max-max {
+    grid-template-columns: max-content max-content;
+}
+
+.gtc-max-max-max {
+    grid-template-columns: repeat(3, max-content);
+}
+
+.gtc-max-1-1 {
+    grid-template-columns: max-content 1fr 1fr;
+}
+
+.gtc-1-a {
+    grid-template-columns: 1rem auto;
+}
+
+.gtc-1_5-a {
+    grid-template-columns: 1.5rem auto;
+}
+
+.gtc-min-a {
+    grid-template-columns: min-content auto;
+}
+
+.gtc-min-min-a {
+    grid-template-columns: min-content min-content auto;
+}
+
+.gtc-min-a-a {
+    grid-template-columns: min-content auto auto;
+}
+
+.gtc-min-a-min {
+    grid-template-columns: min-content auto min-content;
+}
+
+.gtc-min-min {
+    grid-template-columns: min-content min-content;
+}
+
+.gtc-min-auto {
+    grid-template-columns: min-content auto;
+}
+
+.gtc-min-max {
+    grid-template-columns: min-content max-content;
+}
+
+.gtc-4min {
+    grid-template-columns: repeat(4, min-content);
+}
+
+.gtc-4max {
+    grid-template-columns: repeat(4, max-content);
+}
+
+.gtc-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+
+.gtc-2-a {
+    grid-template-columns: 2rem auto;
+}
+
+.gtc-3-a {
+    grid-template-columns: 3rem auto;
+}
+
+.gtc-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.gtc-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.gtc-5 {
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.gtc-6 {
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.gtc-7 {
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.gtc-7a {
+    grid-template-columns: repeat(7, max-content);
+}
+
+.gtc-7-4 {
+    grid-template-columns: repeat(7, 4rem);
+}
+
+.gtc-8 {
+    grid-template-columns: repeat(8, 1fr);
+}
+
+.gtc-9 {
+    grid-template-columns: repeat(9, 1fr);
+}
+
+.gtc-10 {
+    grid-template-columns: repeat(10, 1fr);
+}
+
+.gtc-11 {
+    grid-template-columns: repeat(11, 1fr);
+}
+
+.gtc-12 {
+    grid-template-columns: repeat(12, 1fr);
+}
+
+
+
+
+/* Tempplate rows */
+.gar-min {
+    grid-auto-rows: min-content;
+}
+
+.gar-max {
+    grid-auto-rows: max-content;
+}
+
+.gtr-min {
+    grid-template-rows: min-content;
+}
+
+.gtr-2 {
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.gtr-3 {
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.gtr-4 {
+    grid-template-rows: repeat(4, 1fr);
+}
+
+.gtr-5 {
+    grid-template-rows: repeat(5, 1fr);
+}
+
+.gtr-6 {
+    grid-template-rows: repeat(6, 1fr);
+}
+
+.gtr-7 {
+    grid-template-rows: repeat(7, 1fr);
+}
+
+.gtr-8 {
+    grid-template-rows: repeat(8, 1fr);
+}
+
+.gtr-9 {
+    grid-template-rows: repeat(9, 1fr);
+}
+
+.gtr-10 {
+    grid-template-rows: repeat(10, 1fr);
+}
+
+.gtr-11 {
+    grid-template-rows: repeat(11, 1fr);
+}
+
+.gtr-12 {
+    grid-template-rows: repeat(12, 1fr);
+}
+
+.size-m {
+    width: 12rem;
+    height: 19rem;
+}

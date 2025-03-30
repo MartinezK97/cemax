@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cemax - Tansformamos espacios</title>
+    <link rel="shortcut icon" href="./assets/img/brand/isotype_black.png" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/css/default.css">
+    <link rel="stylesheet" href="./assets/css/grid.css">
+    <link rel="stylesheet" href="./assets/css/header.css">
+    <link rel="stylesheet" href="./assets/css/portada.css">
+    <link rel="stylesheet" href="./assets/css/menu.css">
+    <link rel="stylesheet" href="./assets/css/servicios.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+    <header class="dg gtc-min-a pad-1-2">
+        <a href="#" class="dg gtc-min-a fz-2">
+            <i class="isotype"></i>
+            <span>Cemax</span>
+        </a>
+        <!-- Menú de cabecera -->
+        <nav class="dg gtc-4 gg-1 maxw-min mar-a-0-a-a">
+            <a href="" class="dg gtc-1-a gg-5"><i class="fa fa-home"></i><span>Inicio</span></a>
+            <a href="" class="dg gtc-1-a gg-5"><i class="fa fa-briefcase"></i><span>Nosotros</span></a>
+            <a href="" class="dg gtc-1-a gg-5"><i class="fa fa-briefcase"></i><span>Servicios</span></a>
+            <a href="" class="dg gtc-1-a gg-5"><i class="fa fa-briefcase"></i><span>Contacto</span></a>
+        </nav>
+    </header>
+    <div id="menu" class="hide">
+        <button class="btn-menu fz-2 maxw-max"><i class="fa fa-bars"></i></button>
+        <a href="#"><i class="fa fa-home"></i> Inicio</a>
+        <a href="#"><i class="fa fa-briefcase"></i> Nosotros</a>
+        <a href="#"><i class="fa fa-briefcase"></i> Servicios</a>
+        <a href="#"><i class="fa fa-briefcase"></i> Testimonios</a>
+        <a href="#"><i class="fa fa-briefcase"></i> Contacto </a>
+    </div>
+    <section id="portada" class="dg ac-center ai-center">
+        <h1 class="fz-5 ta-center maxw-max mar-0-a">Transformamos<br />tus espacios</h1>
+        <h2 class="fz-3 ta-center maxw-max mar-0-a">Hace más de 10 años</h2>
+        <a href="http://wa.me/+59898760446" target="_blank" href="#"
+            class="border-light ta-center br-100 db maxw-max mar-2-a-0 pad-1 blur-15 fz-1-25">
+            <i class="fab fa-whatsapp"></i> Solicitar presupuesto</a>
+        <div id="gyroStatus" class="pad-2 ta-center">Nada aún</div>
+    </section>
+    <!-- Servicios -->
+    <section id="servicios" class="fz-1">
+        <h1 class="fz-3 pad-2 ta-center color-primary">Nuestros Servicios</h1>
+        <p class="lineH-1-5 pad-2 ">Todos nuestros servicios cuentan con garantía de calidad y profesionalimso.
+            Tabajamos siguiendo las normas de seguridad correspondientes para
+        </p>
+        <div id="servicios" class=" mar-0 pad-0">
+            <div class="service border">
+                <article class="description">
+                    <h3 class="color-primary">Construcción</h3>
+                    <p>Levantamos estructuras sólidas y funcionales con materiales de alta calidad y técnicas avanzadas.
+                        Desde cimientos hasta
+                        acabados, garantizamos durabilidad, seguridad y un diseño adaptado a tus necesidades.</p>
+                </article>
+            </div>
+
+
+        </div>
+    </section>
+
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Verifica si estás en contexto seguro
+            if (window.isSecureContext) {
+                console.log("Contexto seguro (HTTPS/localhost)");
+            } else {
+                console.log("Se requiere HTTPS para el giroscopio");
+            }
+
+
+            const gyroStatus = document.getElementById('gyroStatus');
+            const portada = document.getElementById('portada');
+
+            if (!portada || !gyroStatus) {
+                console.error('Elementos del DOM no encontrados');
+                return;
+            }
+
+            if (window.DeviceOrientationEvent) {
+                let isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+                // Configuración inicial para iOS
+                if (typeof DeviceOrientationEvent.requestPermission === 'function') {
+                    gyroStatus.textContent = 'Toca la pantalla para activar el giroscopio';
+                    gyroStatus.style.color = '#ffff00';
+                } else {
+                    gyroStatus.textContent = 'Giroscopio soportado ✅';
+                    gyroStatus.style.color = '#00ff00';
+                }
+
+                // Manejador de clic para iOS
+                const requestPermission = () => {
+                    DeviceOrientationEvent.requestPermission()
+                        .then(permissionState => {
+                            if (permissionState === 'granted') {
+                                window.addEventListener('deviceorientation', handleOrientation);
+                                gyroStatus.textContent = 'Giroscopio activado ✅';
+                                gyroStatus.style.color = '#00ff00';
+                            } else {
+                                gyroStatus.textContent = 'Permiso denegado ❌';
+                                gyroStatus.style.color = '#ff0000';
+                            }
+                        })
+                        .catch(error => {
+                            gyroStatus.textContent = 'Error al acceder al giroscopio';
+                            console.error(error);
+                        });
+                };
+
+                // Evento de clic solo para iOS
+                if (typeof DeviceOrientationEvent.requestPermission === 'function') {
+                    document.body.addEventListener('click', requestPermission, { once: true });
+                } else {
+                    window.addEventListener('deviceorientation', handleOrientation);
+                }
+
+                function handleOrientation(e) {
+                    let gamma = e.gamma;
+                    let beta = e.beta;
+
+                    gamma = Math.max(-20, Math.min(20, gamma));
+                    beta = Math.max(-20, Math.min(20, beta));
+
+                    const rotateX = beta * 0.5;
+                    const rotateY = gamma * 0.5;
+
+                    portada.style.transform = `
+                    rotateX(${rotateX}deg)
+                    rotateY(${rotateY}deg)
+                    scale(1.1)`;
+                }
+            } else {
+                gyroStatus.textContent = 'Dispositivo no soporta giroscopio ❌';
+                gyroStatus.style.color = '#ff0000';
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+header {
+    height: 5rem;
+    background: #0001;
+    z-index: 99;
+    position: fixed;
+    inset: 0 0 auto 0;
+    backdrop-filter: blur(20px);
+    width: 100vw;
+    max-width: 100vw;
+}
+
+header * {
+    color: #fff !important;
+}
+
+header .isotype {
+    background-image: url(../img/brand/isotype_white.png);
+    background-size: 100%;
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+
+/* PARA PANTALLAS MENORES A 400PX */
+@media (width < 400px) {
+    header {
+        height: 4rem;
+    }
+
+    header .brand-name {
+        font-size: 1.5rem;
+    }
+
+    header .brand-slogan {
+        font-size: 0.675rem;
+    }
+}
+
+@media (width < 900px) {
+
+    header nav {
+        display: none !important;
+    }
+}

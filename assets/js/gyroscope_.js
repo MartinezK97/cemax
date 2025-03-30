@@ -1,7 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Configuración por dispositivo
     const config = {
-        desktop: { maxTilt: 20, sensitivity: 0.25, scale: 1.1, smoothFactor: 0.1, freezeThreshold: 0.02 },
-        mobile: { maxTilt: 25, sensitivity: 0.8, scale: 1.2, invert: true, smoothFactor: 0.12 }
+        desktop: {
+            maxTilt: 20,
+            sensitivity: 0.25,
+            scale: 1.1,
+            smoothFactor: 0.1,
+            freezeThreshold: 0.02
+        },
+        mobile: {
+            maxTilt: 25,
+            sensitivity: 0.8,
+            scale: 1.2,
+            invert: true,
+            smoothFactor: 0.12
+        }
     };
 
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);

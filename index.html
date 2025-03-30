@@ -95,7 +95,7 @@
 
             // Elementos del DOM
             const gyroStatus = document.getElementById('gyroStatus');
-            const portada = document.getElementById('portada');
+            const portada = document.getElementById('background3d');
 
             if (!portada || !gyroStatus) return;
 
@@ -134,33 +134,45 @@
         `;
             };
 
-            // Manejador de permisos (versión mejorada)
+            // Manejador de permisos (mejorado)
             const initGyro = async () => {
                 try {
                     if (typeof DeviceOrientationEvent.requestPermission === 'function') {
+                        // Si el navegador requiere permiso explícito
                         const permission = await DeviceOrientationEvent.requestPermission();
                         if (permission === 'granted') {
+                            alert('Acceso al giroscopio concedido ✅');
                             window.addEventListener('deviceorientation', handleOrientation);
                             gyroStatus.textContent = 'Giroscopio activado ✅';
                             gyroStatus.style.color = '#00ff00';
+                        } else {
+                            alert('Acceso denegado ❌');
+                            gyroStatus.textContent = 'Permiso denegado ❌';
+                            gyroStatus.style.color = 'red';
                         }
                     } else {
+                        // Si no se necesita permiso, activar directamente
+                        alert('Acceso directo al giroscopio ✅');
                         window.addEventListener('deviceorientation', handleOrientation);
                         gyroStatus.textContent = 'Giroscopio activado ✅';
                         gyroStatus.style.color = '#00ff00';
                     }
                 } catch (error) {
+                    alert('Error al acceder al giroscopio ❌');
                     gyroStatus.textContent = 'Error ❌';
                     console.error(error);
                 }
             };
 
-            // Iniciar con interacción del usuario
-            document.addEventListener('click', initGyro, { once: true });
-
-            // Estado inicial
-            gyroStatus.textContent = 'Toca para activar el giroscopio 📱';
-            gyroStatus.style.color = '#ffff00';
+            // Intentar iniciar sin interacción si es posible
+            if (typeof DeviceOrientationEvent.requestPermission !== 'function') {
+                initGyro();
+            } else {
+                // En navegadores que requieran interacción, esperar clic
+                document.addEventListener('click', initGyro, { once: true });
+                gyroStatus.textContent = 'Toca para activar el giroscopio 📱';
+                gyroStatus.style.color = '#ffff00';
+            }
         });
     </script>
 

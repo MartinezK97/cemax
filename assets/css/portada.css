@@ -13,22 +13,6 @@
     transform-style: preserve-3d;
 }
 
-/* #portada::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: url(../img/portada.jpg);
-    background-size: cover;
-    background-position: 25% 100%;
-    background-size: cover;
-    background-position: center;
-    transform-origin: center;
-    transition: transform 0.1s ease-out;
-}
-
-#portada::before {
-    transform: skewX(var(--skewX, 0deg)) skewY(var(--skewY, 0deg)) translate(var(--translateX, 0px), var(--translateY, 0px));
-} */
 
 #portada {
     position: relative;
@@ -39,7 +23,7 @@
     perspective: 1000px;
 }
 
-#portada::before {
+#portada .background {
     content: '';
     position: absolute;
     inset: 0;
@@ -49,6 +33,15 @@
     transition: transform 0.1s linear;
     will-change: transform;
     transform-style: preserve-3d;
+
+}
+
+#portada .background:after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #0009;
+    z-index: 1;
 }
 
 #portada>* {

@@ -42,6 +42,7 @@
         <a href="#"><i class="fa fa-briefcase"></i> Contacto </a>
     </div>
     <section id="portada" class="dg ac-center ai-center">
+        <div class="background"></div>
         <h1 class="fz-5 ta-center maxw-max mar-0-a">Transformamos<br />tus espacios</h1>
         <h2 class="fz-3 ta-center maxw-max mar-0-a">Hace más de 10 años</h2>
         <a href="http://wa.me/+59898760446" target="_blank" href="#"
@@ -74,14 +75,21 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Configuración de movimiento (ajusta estos valores)
+            const motionConfig = {
+                maxTilt: 20,          // Máxima inclinación en grados
+                sensitivity: 0.5,     // Intensidad del movimiento (0.1 - 1)
+                scale: 1.1,           // Escala del efecto de profundidad
+                smoothness: 0.15,     // Suavizado del movimiento (0 = brusco, 1 = suave)
+                enableScale: true     // Habilitar efecto de escala
+            };
 
-            // Verifica si estás en contexto seguro
+            // Verificación de contexto seguro
             if (window.isSecureContext) {
                 console.log("Contexto seguro (HTTPS/localhost)");
             } else {
                 console.log("Se requiere HTTPS para el giroscopio");
             }
-
 
             const gyroStatus = document.getElementById('gyroStatus');
             const portada = document.getElementById('portada');
@@ -92,8 +100,6 @@
             }
 
             if (window.DeviceOrientationEvent) {
-                let isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-
                 // Configuración inicial para iOS
                 if (typeof DeviceOrientationEvent.requestPermission === 'function') {
                     gyroStatus.textContent = 'Toca la pantalla para activar el giroscopio';
@@ -103,7 +109,32 @@
                     gyroStatus.style.color = '#00ff00';
                 }
 
-                // Manejador de clic para iOS
+                // Manejador de movimiento
+                let currentRotation = { x: 0, y: 0 };
+
+                const handleOrientation = e => {
+                    let gamma = e.gamma || 0;
+                    let beta = e.beta || 0;
+
+                    // Aplicar límites
+                    gamma = Math.max(-motionConfig.maxTilt, Math.min(motionConfig.maxTilt, gamma));
+                    beta = Math.max(-motionConfig.maxTilt, Math.min(motionConfig.maxTilt, beta));
+
+                    // Aplicar suavizado
+                    currentRotation.x += (beta * motionConfig.sensitivity - currentRotation.x) * motionConfig.smoothness;
+                    currentRotation.y += (gamma * motionConfig.sensitivity - currentRotation.y) * motionConfig.smoothness;
+
+                    // Construir transformación
+                    const transform = `
+                rotateX(${currentRotation.x}deg)
+                rotateY(${currentRotation.y}deg)
+                ${motionConfig.enableScale ? `scale(${motionConfig.scale})` : ''}
+            `;
+
+                    portada.style.transform = transform;
+                };
+
+                // Manejador de permisos
                 const requestPermission = () => {
                     DeviceOrientationEvent.requestPermission()
                         .then(permissionState => {
@@ -122,27 +153,11 @@
                         });
                 };
 
-                // Evento de clic solo para iOS
+                // Inicialización
                 if (typeof DeviceOrientationEvent.requestPermission === 'function') {
                     document.body.addEventListener('click', requestPermission, { once: true });
                 } else {
                     window.addEventListener('deviceorientation', handleOrientation);
-                }
-
-                function handleOrientation(e) {
-                    let gamma = e.gamma;
-                    let beta = e.beta;
-
-                    gamma = Math.max(-20, Math.min(20, gamma));
-                    beta = Math.max(-20, Math.min(20, beta));
-
-                    const rotateX = beta * 0.5;
-                    const rotateY = gamma * 0.5;
-
-                    portada.style.transform = `
-                    rotateX(${rotateX}deg)
-                    rotateY(${rotateY}deg)
-                    scale(1.1)`;
                 }
             } else {
                 gyroStatus.textContent = 'Dispositivo no soporta giroscopio ❌';

@@ -28,11 +28,13 @@
     position: absolute;
     inset: 0;
     background-image: url('../img/portada.jpg');
+    background-image: url(https://img.freepik.com/foto-gratis/pared-piedra_1417-1590.jpg?t=st=1743346446~exp=1743350046~hmac=c3dca0772f1fa519ec83ec231333f13c489de418cfd864e0b0df1f84e19e59aa&w=996);
     background-size: cover;
     background-position: center;
     transition: transform 0.1s linear;
     will-change: transform;
     transform-style: preserve-3d;
+    backface-visibility: hidden;
 
 }
 
@@ -47,8 +49,16 @@
 #portada>* {
     color: #fff;
     z-index: 1;
+    /* font-family: "Rubik Distressed";
+    text-shadow: 0 0 5px #000 */
 }
 
+#portada>h1,
+#portada>h2 {
+    font-family: "Rubik Distressed";
+    text-shadow: 0 0 5px #000;
+    font-weight: 100;
+}
 
 #portada a {
     margin-top: 5rem;

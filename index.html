@@ -48,7 +48,6 @@
         <a href="http://wa.me/+59898760446" target="_blank" href="#"
             class="border-light ta-center br-100 db maxw-max mar-2-a-0 pad-1 blur-15 fz-1-25">
             <i class="fab fa-whatsapp"></i> Solicitar presupuesto</a>
-        <div id="gyroStatus" class="pad-2 ta-center">Nada aún</div>
     </section>
     <!-- Servicios -->
     <section id="servicios" class="fz-1">
@@ -72,109 +71,14 @@
 
 
 
-
-    <script>
-        const motionConfig = {
-            maxTilt: 20,          // Máxima inclinación en grados
-            sensitivity: 1,     // Intensidad del movimiento (0.1 - 1)
-            scale: 1.1,           // Escala del efecto de profundidad
-            smoothness: 0.5,     // Suavizado del movimiento (0 = brusco, 1 = suave)
-            enableScale: true     // Habilitar efecto de escala
-        };
-        document.addEventListener('DOMContentLoaded', () => {
-            const motionConfig = {
-                maxTilt: 30,           // Máxima inclinación permitida
-                sensitivity: {         // Sensibilidad por eje
-                    x: 1,            // Horizontal (gamma)
-                    y: 1             // Vertical (beta)
-                },
-                scale: 1.15,           // Efecto de profundidad
-                invertMovement: true,  // Invertir dirección del movimiento
-                smoothness: 0.1        // Suavidad del efecto
-            };
-
-            // Elementos del DOM
-            const gyroStatus = document.getElementById('gyroStatus');
-            const portada = document.getElementById('background3d');
-
-            if (!portada || !gyroStatus) return;
-
-            // Variables de estado
-            let currentX = 0, currentY = 0;
-
-            const handleOrientation = e => {
-                // Obtener valores del sensor
-                let gamma = e.gamma || 0;  // Horizontal (-90 a 90)
-                let beta = e.beta || 0;     // Vertical (-180 a 180)
-
-                // Aplicar inversión de movimiento
-                if (motionConfig.invertMovement) {
-                    gamma = -gamma;
-                    beta = -beta;
-                }
-
-                // Calcular movimiento objetivo
-                const targetX = Math.min(motionConfig.maxTilt,
-                    Math.max(-motionConfig.maxTilt,
-                        beta * motionConfig.sensitivity.y));
-
-                const targetY = Math.min(motionConfig.maxTilt,
-                    Math.max(-motionConfig.maxTilt,
-                        gamma * motionConfig.sensitivity.x));
-
-                // Suavizar movimiento
-                currentX += (targetX - currentX) * motionConfig.smoothness;
-                currentY += (targetY - currentY) * motionConfig.smoothness;
-
-                // Aplicar transformación
-                portada.style.transform = `
-            rotateX(${currentX}deg)
-            rotateY(${currentY}deg)
-            scale(${motionConfig.scale})
-        `;
-            };
-
-            // Manejador de permisos (mejorado)
-            const initGyro = async () => {
-                try {
-                    if (typeof DeviceOrientationEvent.requestPermission === 'function') {
-                        // Si el navegador requiere permiso explícito
-                        const permission = await DeviceOrientationEvent.requestPermission();
-                        if (permission === 'granted') {
-                            alert('Acceso al giroscopio concedido ✅');
-                            window.addEventListener('deviceorientation', handleOrientation);
-                            gyroStatus.textContent = 'Giroscopio activado ✅';
-                            gyroStatus.style.color = '#00ff00';
-                        } else {
-                            alert('Acceso denegado ❌');
-                            gyroStatus.textContent = 'Permiso denegado ❌';
-                            gyroStatus.style.color = 'red';
-                        }
-                    } else {
-                        // Si no se necesita permiso, activar directamente
-                        alert('Acceso directo al giroscopio ✅');
-                        window.addEventListener('deviceorientation', handleOrientation);
-                        gyroStatus.textContent = 'Giroscopio activado ✅';
-                        gyroStatus.style.color = '#00ff00';
-                    }
-                } catch (error) {
-                    alert('Error al acceder al giroscopio ❌');
-                    gyroStatus.textContent = 'Error ❌';
-                    console.error(error);
-                }
-            };
-
-            // Intentar iniciar sin interacción si es posible
-            if (typeof DeviceOrientationEvent.requestPermission !== 'function') {
-                initGyro();
-            } else {
-                // En navegadores que requieran interacción, esperar clic
-                document.addEventListener('click', initGyro, { once: true });
-                gyroStatus.textContent = 'Toca para activar el giroscopio 📱';
-                gyroStatus.style.color = '#ffff00';
-            }
-        });
-    </script>
+    <div class="modal-backdrop"></div>
+    <div class="permission-modal">
+        <h2>¿Permitir acceso al giroscopio? 🌍</h2>
+        <p>Para disfrutar de la experiencia interactiva, necesitamos acceso al sensor de movimiento de tu dispositivo.
+        </p>
+        <button id="grant-permission">Permitir acceso</button>
+    </div>
+    <script src="./assets/js/gyroscope.js"></script>
 
 
 </body>

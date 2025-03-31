@@ -1,0 +1,112 @@
+#proyectos {
+    width: clamp(300px, 100%, 1000px);
+    margin: 5rem auto;
+    position: relative;
+}
+
+#project_referer {
+    height: 5rem;
+    width: 100%;
+    /* border: solid 1px red; */
+    transform: translateY(-100%);
+    position: absolute;
+}
+
+#gallery_content {
+    position: relative;
+    padding: 0.5rem 0.75rem;
+}
+
+#gallery_content * {
+    transition: all 0.25ms ease-in-out;
+}
+
+#gallery {
+    box-shadow: 0 0 15px #0005;
+    display: flex;
+    scroll-snap-type: x mandatory;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    height: clamp(400px, 100%, 600px);
+    gap: 0.25rem;
+    position: relative;
+}
+
+#gallery_content .prev,
+#gallery_content .next {
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: grid;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    padding: 3px;
+    border: solid 1px #fff;
+    top: 0;
+    bottom: 0;
+    border-radius: 100%;
+    background-color: var(--primary);
+    backdrop-filter: blur(15px);
+    z-index: 1;
+    opacity: 0;
+}
+
+
+
+
+
+#gallery_content .prev {
+    left: 0.25rem;
+    margin: auto auto auto 0;
+}
+
+#gallery_content .next {
+    right: 0.25rem;
+    margin: auto 0 auto auto;
+}
+
+#gallery img {
+    width: 100%;
+    object-fit: cover;
+    scroll-snap-stop: -10rem;
+    scroll-snap-align: start;
+    height: clamp(250px, 50vh, 400px);
+    margin: 0 0rem;
+}
+
+#gallery img:last-child {
+    margin-right: 100%;
+    /* Ajusta el valor según necesites */
+}
+
+#gallery_content:hover>.prev,
+#gallery_content:hover>.next {
+    opacity: 1;
+}
+
+@media(width > 900px) {
+    #gallery_content {
+        padding: 1rem;
+        border-radius: 10px;
+    }
+
+    #gallery img {
+        width: calc((100% - 2rem)/ 3);
+    }
+}
+
+
+
+@media(width < 900px) {
+
+    #gallery_content .prev,
+    #gallery_content .next {
+        display: none;
+    }
+
+    #gallery img:last-child {
+        margin-right: 0%;
+        /* Ajusta el valor según necesites */
+    }
+}

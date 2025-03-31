@@ -12,7 +12,6 @@
     --primary: #fbc26b;
     --primary-03: rgb(0, 255, 98, 0.3);
     --border-light: rgba(255, 255, 255, 0.1);
-
     --border-light: solid 1px #301d0120;
 }
 
@@ -95,6 +94,7 @@ html {
 .permission-modal button:hover {
     background: #0056b3;
 }
+
 
 .modal-backdrop {
     position: fixed;
@@ -212,6 +212,7 @@ html {
 .box {
     border-radius: 5px;
     padding: 15px 10px;
+    background-color: #fff;
 }
 
 .btn-primary {
@@ -366,6 +367,22 @@ html {
 .box-shadow {
     --shadow: 0 0 10px rgba(0, 0, 0, 0.333);
     box-shadow: var(--shadow);
+}
+
+.box-shadow-tp-lt {
+    box-shadow: -1px -1px 5px #0003;
+}
+
+.box-shadow-tp-rt {
+    box-shadow: 1px -1px 5px #0003;
+}
+
+.box-shadow-bm-lt {
+    box-shadow: -1px 1px 5px #0003;
+}
+
+.box-shadow-bm-rt {
+    box-shadow: 1px 1px 5px #0003;
 }
 
 

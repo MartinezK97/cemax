@@ -3,7 +3,7 @@
     min-height: 100vh;
     max-height: max-content;
     padding: 1rem;
-    width: 100%;
+    width: clamp(300px, 100%, 1000px);
     margin: 0 auto;
 }
 
@@ -39,6 +39,7 @@
     transform: skewY(-5deg);
 }
 
+
 .terminaciones .img,
 .electricidad .img {
     right: 0;
@@ -53,26 +54,29 @@
 }
 
 .construccion .img {
-    background-image: url(../img/construccion.svg);
+    background-image: url(../img/servicios/construccion.svg);
     background-size: cover;
-    border: saolid 1px;
+
 }
 
 .terminaciones .img {
     background-image: url(../img/terminaciones.svg);
     background-size: cover;
-    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-position: 0% 00%;
 }
 
 .sanitaria .img {
     background-image: url(../img/sanitaria.svg);
-    background-size: cover;
-    color: #BA68C8;
+    background-size: 120%;
+    background-repeat: no-repeat;
+    background-position: 20% 50%;
 }
 
 .electricidad .img {
     background-image: url(../img/electricidad.svg);
     background-size: cover;
+    background-position: 25% 50%;
 }
 
 
@@ -94,13 +98,25 @@
 
 
 @media(width < 999px) {
-
-
     #servicios .content-services {
         grid-template-columns: 1fr;
         max-width: 90%;
         grid-gap: 6rem !important;
         margin: 0 auto;
+    }
+}
+
+@media(width < 600px) {
+
+    /* Aumentar tamaño del cuadro de texto en pequeñas pantallas */
+    .construccion .description,
+    .sanitaria .description {
+        margin-left: -4rem;
+    }
+
+    .terminaciones .description,
+    .electricidad .description {
+        margin-right: -4rem;
     }
 
 

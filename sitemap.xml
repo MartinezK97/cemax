@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Página principal -->
+  <url>
+    <loc>http://www.localhost/cemax/</loc>
+    <priority>1.0</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <!-- Sección: Servicios -->
+  <url>
+    <loc>http://www.localhost/cemax/#servicios</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <!-- Sección: Proyectos destacados -->
+  <url>
+    <loc>http://www.localhost/cemax/#proyectos</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <!-- Sección: Sobre mi -->
+  <url>
+    <loc>http://www.localhost/cemax/#sobremi</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <!-- Sección: Nosotros (diferenciadores) -->
+  <url>
+    <loc>http://www.localhost/cemax/#nosotros</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <!-- Sección: Testimonios -->
+  <url>
+    <loc>http://www.localhost/cemax/#testimonios</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+</urlset>

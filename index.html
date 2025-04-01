@@ -2,80 +2,80 @@
 <html lang="es">
 
 <head>
+    <!-- Configuración básica -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cemax - Tansformamos tus espacios</title>
-    <meta charset="UTF-8">
+
+    <!-- Título de la página -->
     <title>Servicios de Construcción y Remodelación Integral | Cemax</title>
 
-    <!-- Meta Description (enfocada en todos los servicios) -->
+    <!-- Meta Description -->
     <meta name="description"
         content="Empresa especializada en construcción, remodelación, fontanería, electricidad y pintura para hogares y negocios. Trabajos garantizados, presupuesto gratis y atención inmediata.">
 
-    <!-- Meta Keywords (agrupando todos los servicios) -->
+    <!-- Meta Keywords -->
     <meta name="keywords"
         content="albañilería, construcción de casas, remodelación de baños, fontanería profesional, electricista certificado, pintura de interiores, ampliación de viviendas, acabados de lujo, servicios sanitarios, reformas para negocios">
 
-    <!-- Canonical (para evitar duplicados) -->
-    <link rel="canonical" href="https://www.tudominio.com">
+    <!-- Canonical URL -->
+    <link rel="canonical" href="http://www.localhost/cemax">
 
-    <!-- Viewport (responsive design) -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Open Graph (compartir en redes sociales) -->
-    <meta property="og:title" content="[Nombre de la Empresa] | Expertos en Construcción y Remodelación">
+    <!-- Open Graph (para compartir en redes sociales) -->
+    <meta property="og:title" content="Servicios de Construcción y Remodelación Integral | Cemax">
     <meta property="og:description"
         content="Transformamos tu hogar o negocio con servicios integrales: albañilería, fontanería, electricidad y más. ¡Solicita tu presupuesto hoy!">
-    <meta property="og:image" content="https://www.tudominio.com/img/og-image-landing.jpg">
-    <meta property="og:url" content="https://www.tudominio.com">
+    <meta property="og:image" content="http://www.localhost/cemax/assets/img/ogimage.PNG">
+    <meta property="og:url" content="http://www.localhost/cemax">
     <meta property="og:type" content="website">
+
+    <!-- Datos estructurados JSON-LD para SEO local -->
     <script type="application/ld+json">
         {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "Cemax",
-        "image": "https://www.tudominio.com/img/brand/isotype_black.png",
-        "description": "Servicios profesionales de construcción, remodelación, fontanería y electricidad para hogares y negocios.",
-        "address": {
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          "name": "Cemax",
+          "image": "http://www.localhost/cemax/assets/img/brand/isotype_black.png",
+          "description": "Servicios profesionales de construcción, remodelación, fontanería y electricidad para hogares y negocios.",
+          "address": {
             "@type": "PostalAddress",
             "streetAddress": "Colonia 3814",
             "addressLocality": "Montevideo",
             "addressRegion": "Montevideo, Uruguay",
             "postalCode": "11000"
-        },
-        "telephone": "+59898760446",
-        "priceRange": "5000 - 500000",
-        "serviceArea": {
+          },
+          "telephone": "+59898760446",
+          "priceRange": "5000 - 500000",
+          "serviceArea": {
             "@type": "AdministrativeArea",
             "name": "Montevideo"
-        },
-        "hasOfferCatalog": {
+          },
+          "hasOfferCatalog": {
             "@type": "OfferCatalog",
             "name": "Servicios de Construcción",
             "itemListElement": [
-                {
-                    "@type": "Offer",
-                    "name": "Construcción y Remodelaciones"
-                },
-                {
-                    "@type": "Offer",
-                    "name": "Sanitaria y Fontanería"
-                },
-                {
-                    "@type": "Offer",
-                    "name": "Instalaciones Eléctricas"
-                },
-                {
-                    "@type": "Offer",
-                    "name": "Acabados y Terminaciones"
-                }
+              {
+                "@type": "Offer",
+                "name": "Construcción y Remodelaciones"
+              },
+              {
+                "@type": "Offer",
+                "name": "Sanitaria y Fontanería"
+              },
+              {
+                "@type": "Offer",
+                "name": "Instalaciones Eléctricas"
+              },
+              {
+                "@type": "Offer",
+                "name": "Acabados y Terminaciones"
+              }
             ]
+          }
         }
-    }
-    </script>
+      </script>
 
-
-
+    <!-- Meta Robots para indexación -->
+    <meta name="robots" content="index, follow">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
@@ -98,8 +98,6 @@
     <link rel="stylesheet" href="./assets/css/gallery.css">
     <link rel="stylesheet" href="./assets/css/testimonios.css">
     <link rel="stylesheet" href="./assets/css/footer.css">
-
-
     <!-- Js -->
     <script src="./assets/js/menu.js"></script>
     <script src="./assets/js/header.js"></script>
@@ -108,7 +106,6 @@
 </head>
 
 <body>
-
     <header class="dg gtc-min-a pad-1-2">
         <a href="#" class="dg gtc-min-a fz-2 ac-center ai-center">
             <i class="fa fa-cubes as-center"></i>
@@ -116,31 +113,33 @@
         </a>
         <!-- Menú de cabecera -->
         <nav class="dg gtc-6 gg-1-5 maxw-min mar-a-0-a-a ac-center ai-center">
-            <a href="" class="dg gtc-min-a gg-5"><i class="fa fa-home as-center"></i><span> Inicio</span></a>
+            <a href="#portada" class="dg gtc-min-a gg-5"><i class="fa fa-home as-center"></i><span> Inicio</span></a>
             <a href="#servicios" class="dg gtc-min-a gg-5"><i class="fa fa-trowel as-center"></i><span>
                     Servicios</span></a>
             <a href="#project_referer" class="dg gtc-min-a gg-5"><i class="fa fa-trowel-bricks as-center"></i><span>
                     Proyectos</span></a>
-            <a href="" class="dg gtc-min-a gg-5"><i class="fa fa-users as-center"></i><span> Nosotros</span></a>
-            <a href="" class="dg gtc-min-a gg-5"><i class="fa fa-comments as-center"></i><span> Testimonios</span></a>
-            <a href="" class="dg gtc-min-a gg-5 bg-button color-btn pad-05-2 br-100" id="contact_header_btn"><i
+            <a href="#sobremi" class="dg gtc-min-a gg-5 minw-max"><i class="fa fa-user as-center"></i><span> Sobre
+                    mi</span></a>
+            <a href="#testimonios" class="dg gtc-min-a gg-5"><i class="fa fa-comments as-center"></i><span>
+                    Testimonios</span></a>
+            <a href="#contacto" class="dg gtc-min-a gg-5 bg-button color-btn pad-05-2 br-100" id="contact_header_btn"><i
                     class="fa fa-envelope as-center"></i><span>Contacto</span></a>
         </nav>
     </header>
     <div id="menu" class="hide">
         <button class="btn-menu fz-2 maxw-max"><i class="fa fa-bars"></i></button>
-        <a href="#portada"><i class="fa fa-home"></i> Inicio</a>
-        <a href="#servicios"><i class="fa fa-trowel"></i> Servicios</a>
-        <a href="#project_referer"><i class="fa fa-trowel"></i> Proyectos</a>
-        <a href="#"><i class="fa fa-users"></i> Nosotros</a>
-        <a href="#"><i class="fa fa-comments"></i> Testimonios</a>
-        <a href="#"><i class="fa fa-envelope"></i> Contacto </a>
+        <a href="#portada" aria-label="Sección principal"><i class="fa fa-home"></i> Inicio</a>
+        <a href="#servicios" aria-label="Sección de servicios"><i class="fa fa-trowel"></i> Servicios</a>
+        <a href="#project_referer" aria-label="Sección de proyectos"><i class="fa fa-trowel"></i> Proyectos</a>
+        <a href="#sobremi" aria-label="Descipción de mi"><i class="fa fa-user"></i> Sobre mi</a>
+        <a href="#testimonios" aria-label="Testimonios de clientes"><i class="fa fa-comments"></i> Testimonios</a>
+        <a href="#contacto" aria-label="Información de contacto"><i class="fa fa-envelope"></i> Contacto </a>
     </div>
     <section id="portada" class="dg ac-center ai-center">
         <div id="background3d"></div>
         <h1 class="fz-5 ta-center maxw-max mar-0-a">Transformamos<br />tus espacios</h1>
         <h2 class="fz-3 ta-center maxw-max mar-0-a">Hace más de 10 años</h2>
-        <a href="http://wa.me/+59898760446" target="_blank" href="#"
+        <a href="http://wa.me/+59898760446" target="_blank" href="https://wa.me/+59898760446" rel="noopener noreferrer"
             class="border-light ta-center br-100 db maxw-max mar-2-a-0 pad-1 blur-15 fz-1-25">
             <i class="fab fa-whatsapp"></i> Solicitar presupuesto</a>
     </section>
@@ -175,7 +174,8 @@
                         Realzamos cada espacio con acabados y terminaciones de alta calidad, cuidando cada detalle para
                         un resultado impecable y duradero
                     </p>
-                    <a target="_blank" class="btn-primary border-light maxw-max mar-a-0-a-a fz-1 pad-05-1 db br-100"
+                    <a target="_blank" rel="noopener noreferrer"
+                        class="btn-primary border-light maxw-max mar-a-0-a-a fz-1 pad-05-1 db br-100"
                         href="https://wa.me/+59894746115?text=Hola,%20me%20gustar%C3%ADa%20solicitar%20presupuesto%20de%20acabados%20y%20terminaciones%20que%20vi%20en%20tu%20web"><i
                             class="fab fa-whatsapp"></i> Solicitar presupuesto</a>
                 </div>
@@ -190,7 +190,8 @@
                         Brindamos soluciones duraderas en sanitaria y fontanería, con instalaciones y materiales de
                         alta calidad para evitar futuras pérdidas.
                     </p>
-                    <a target="_blank" class="btn-primary border-light maxw-max mar-a-0-a-a fz-1 pad-05-1 db br-100"
+                    <a target="_blank" rel="noopener noreferrer"
+                        class="btn-primary border-light maxw-max mar-a-0-a-a fz-1 pad-05-1 db br-100"
                         href="https://wa.me/+59894746115?text=Hola,%20me%20gustar%C3%ADa%20solicitar%20presupuesto%20para%20sanitaria%20y%20fontaner%C3%ADa%20que%20vi%20en%20tu%20web"><i
                             class="fab fa-whatsapp"></i> Solicitar presupuesto</a>
                 </div>
@@ -203,7 +204,8 @@
                         Instalamos y reparamos sistemas eléctricos de forma segura, y con garantia
                         de durabilidad, evitando futuras fallas, y siguiendo las normas de seguridad vigentes.
                     </p>
-                    <a target="_blank" class="btn-primary border-light maxw-max mar-a-0-a-a fz-1 pad-05-1 db br-100"
+                    <a target="_blank" rel="noopener noreferrer"
+                        class="btn-primary border-light maxw-max mar-a-0-a-a fz-1 pad-05-1 db br-100"
                         href="https://wa.me/+59894746115?text=Hola,%20me%20gustar%C3%ADa%20solicitar%20el%20servicio%20para%20recarga%20de%20l%C3%ADquido%20refrigerante">
                         <i class="fab fa-whatsapp"></i> Solicitar presupuesto</a>
                 </div>
@@ -224,11 +226,11 @@
         <section id="gallery_content" class="fa">
             <button class="prev"><i class="fa fa-angle-left"></i></button>
             <div id="gallery">
-                <img src="./assets/img/proyectos/one.jpg" alt="Foto de living">
-                <img src="./assets/img/proyectos/two.jpg" alt="Foto de baño">
-                <img src="./assets/img/proyectos/three.jpg" alt="Foto de cuarto">
-                <img src="./assets/img/proyectos/four.jpg" alt="Foto de cocina">
-                <img src="./assets/img/proyectos/five.jpg" alt="Foto de escaleras">
+                <img src="./assets/img/proyectos/one.jpg" alt="Foto de living terminado" loading="lizy">
+                <img src="./assets/img/proyectos/two.jpg" alt="Foto de baño remodelado" loading="lazy">
+                <img src="./assets/img/proyectos/three.jpg" alt="Foto de dormitorio moderno" loading="lazy">
+                <img src="./assets/img/proyectos/four.jpg" alt="Foto de ampliacion de cocina" loading="lazy">
+                <img src="./assets/img/proyectos/five.jpg" alt="Foto de escaleras rediseñadas" loading="lazy">
 
             </div>
             <button class="next"><i class="fa fa-angle-right"></i></button>
@@ -246,7 +248,7 @@
                 medida, adaptándome a cada proyecto con profesionalismo y atención al detalle. Mi prioridad es ofrecer
                 un servicio confiable y eficiente, cumpliendo siempre con los más altos estándares del rubro.</p>
             <div class="persona gg-1 gtc-min-a gar-min maxh-min dg box maxw-max box-shadow border-light mar-1-a">
-                <img src="./assets/img/yo.png" alt="Fotocarné">
+                <img src="./assets/img/yo.png" alt="Mi foto de presentación" loading="lazy">
                 <span class="name db as-center">Kevin Martínez</span>
                 <p class="oficios mar-0">
                     <span>Albañil</span>
@@ -314,13 +316,15 @@
         <section>
 
             <div class="box">
-                <img src="./assets/img/testimonios/user1.png" class="border-light" alt="Foto de perfil">
+                <img src="./assets/img/testimonios/user1.png" class="border-light" alt="Foto de perfil de un testimonio"
+                    loading="lazy">
                 <p class="name">Matías, 25 años</p>
                 <p class="comentario">Los llamé hoy y en menos de 2 horas ya estaba disfrutando mi nuevo aire
                     acondicionado. Super recomendables! </p>
             </div>
             <div class="box">
-                <img src="./assets/img/testimonios/user2.png" class="border-light" alt="Foto de perfil">
+                <img src="./assets/img/testimonios/user2.png" class="border-light" alt="Foto de perfil de un testimonio"
+                    loading="lazy">
                 <p class="name">Mariana, 34 años</p>
                 <p class="comentario">El servicio fue excelente. Me explicaron todo con claridad y dejaron el equipo
                     funcionando perfectamente. ¡Muy
@@ -328,7 +332,8 @@
                 </p>
             </div>
             <div class="box">
-                <img src="./assets/img/testimonios/user3.png" class="border-light" alt="Foto de perfil">
+                <img src="./assets/img/testimonios/user3.png" class="border-light" alt="Foto de perfil de un testimonio"
+                    loading="lazy">
                 <p class="name">Martín, 56 años</p>
                 <p class="comentario">Tuve un problema con mi aire acondicionado en pleno verano y lo solucionaron el
                     mismo día. Gran atención y muy buen trabajo.</p>
@@ -348,12 +353,12 @@
             </article>
             <div class="rrss gar-min maxw-max maxh-min">
                 <h3 class="pad-1">Seguinos en nuestras redes</h3>
-                <id class="dg gtc-4 gg-1">
-                    <a href=""><i class="fab fa-facebook fz-2"></i></a>
-                    <a href=""><i class="fab fa-instagram fz-2"></i></a>
-                    <a href=""><i class="fab fa-tiktok fz-2"></i></a>
-                    <a href=""><i class="fab fa-x-twitter fz-2"></i></a>
-                </id>
+                <div class="dg gtc-4 gg-1">
+                    <a href="https://facebook.com"><i class="fab fa-facebook fz-2"></i></a>
+                    <a href="https://instagram.com"><i class="fab fa-instagram fz-2"></i></a>
+                    <a href="https://tiktok.com"><i class="fab fa-tiktok fz-2"></i></a>
+                    <a href="https://twitter.com"><i class="fab fa-x-twitter fz-2"></i></a>
+                </div>
             </div>
             <div class="horarios maxw-max">
                 <h3 class="pad-1">Horarioas de atención</h3>
@@ -361,7 +366,8 @@
                 <p>Sábados de 09:00 a 15:00hs</p>
             </div>
         </div>
-        <div class="footer">Copyright 2025. All right reserved. Created by: <a href="">Kevin Martínez</a></div>
+        <div class="footer">Copyright 2025. All right reserved. Created by: <a
+                type="mailto:kevinmartinez08.97@hotmail.com">Kevin Martínez</a></div>
     </footer>
 
 

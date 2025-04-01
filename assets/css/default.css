@@ -1250,6 +1250,10 @@ p {
     padding: 0 0.5rem;
 }
 
+.pad-0-2 {
+    padding: 0 2rem;
+}
+
 .pad-05-0 {
     padding: 0.5rem 0;
 }

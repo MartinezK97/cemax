@@ -1,0 +1,73 @@
+footer {
+    overflow: hidden;
+    background-image: url(../img/brick.jpg);
+}
+
+/* footer .wave {
+    background-image: url(../img/footer.svg);
+    width: 100vw;
+    height: 100px;
+    margin: -1.75rem 0 0 -1rem;
+    background-size: 100% 100%;
+
+} */
+
+footer * {
+    color: var(--body-color);
+}
+
+footer svg {
+    margin: -1rem 0 0 -1rem;
+}
+
+.locacion {
+    padding: 1rem 0;
+    background: #fff3;
+    backdrop-filter: blur(15px);
+}
+
+.rrss {
+    background-color: #fff3;
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+.horarios {
+    background-color: #fff3;
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+.footer {
+    font-size: 0.9rem;
+    background: #0009;
+    color: var(--body-color);
+    padding: 0.5rem;
+    width: 100vw;
+    margin-left: -1rem;
+    text-align: center;
+    margin-bottom: -1rem;
+    margin-top: 1rem;
+}
+
+.footer a {
+    font-weight: 600;
+}
+
+
+.container {
+    width: clamp(300px, 100%, 1000px);
+
+}
+
+@media(width < 990px) {
+    footer .container {
+        grid-template-columns: 1fr !important;
+    }
+
+    footer .container>* {
+        margin: 0 auto;
+    }
+}

@@ -60,21 +60,21 @@
 }
 
 .terminaciones .img {
-    background-image: url(../img/terminaciones.svg);
+    background-image: url(../img/servicios/terminaciones.svg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 0% 00%;
 }
 
 .sanitaria .img {
-    background-image: url(../img/sanitaria.svg);
+    background-image: url(../img/servicios/sanitaria.svg);
     background-size: 120%;
     background-repeat: no-repeat;
     background-position: 20% 50%;
 }
 
 .electricidad .img {
-    background-image: url(../img/electricidad.svg);
+    background-image: url(../img/servicios/electricidad.svg);
     background-size: cover;
     background-position: 25% 50%;
 }

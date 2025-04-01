@@ -1,0 +1,67 @@
+#testimonios {
+    width: clamp(300px, 100%, 1060px);
+    margin: 0 auto;
+    /* min-width: 100vw; */
+
+    padding: 1rem;
+    margin: 0 auto;
+
+}
+
+#testimonios h1 {
+    text-align: center;
+}
+
+#testimonios p {
+    width: clamp(300px, 100%, 700px);
+    margin: 0 auto 2rem;
+}
+
+#testimonios>section {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: visible;
+    /* Cambiar overflow-y por overflow-x */
+    scroll-snap-type: x proximity;
+    scroll-behavior: smooth;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    /* Espacio extra para evitar cortes en algunos navegadores */
+    scrollbar-width: thin;
+    transition: var(--transition);
+    align-items: stretch;
+}
+
+#testimonios .box {
+    background-color: #fff;
+    border-radius: 10px;
+    width: clamp(150px, 45%, 330px);
+    padding: 0.5rem 1.5rem;
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    border: solid 1px #0002;
+    transition: var(--transition);
+}
+
+#testimonios .box img {
+    box-shadow: 0 0 10px #0005;
+    width: 7rem;
+    height: 7rem;
+    display: block;
+    border-radius: 100%;
+    margin: 1rem auto;
+}
+
+#testimonios .box .name {
+    font-weight: 600;
+    text-align: center;
+    border-bottom: solid 1px #eee;
+    padding-bottom: 1rem;
+    width: 100%;
+}
+
+#testimonios .box .comentario {
+    line-height: 1.5;
+    width: 100%;
+}

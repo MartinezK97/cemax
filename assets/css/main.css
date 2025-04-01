@@ -692,8 +692,14 @@ footer .phone a {
         grid-template-columns: 1fr !important;
     }
 
+    .locacion {
+        grid-column: 1/2 !important;
+        grid-row: 3/4;
+    }
+
     footer .container>* {
         margin: 0 auto;
+        grid-column: 1/2 !important;
     }
 }
 

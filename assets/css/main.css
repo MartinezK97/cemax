@@ -588,11 +588,28 @@ header nav a {
 /*! FOOTER */
 footer {
     overflow: hidden;
-    background-image: url(../img/brick.jpg);
+    background-image: url(../img/bricks.webp);
+    background-size: cover;
+    background-repeat: repeat;
+    position: relative;
+}
+
+footer:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-attachment: fixed;
+    background-color: #0009;
+    z-index: 0;
+}
+
+footer>* {
+    z-index: 1;
+    position: relative;
 }
 
 footer * {
-    color: var(--body-color);
+    color: var(--body-color) !important;
 }
 
 footer h1 {
